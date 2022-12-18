@@ -18,13 +18,10 @@ use App\Http\Controllers\ProductsController;
 
 Route::get('/', [
     HomeController::class, 'index'
-]);
-Route::get('/products', [
+])->name('home');
+Route::get('/product/{product}', [
     ProductsController::class, 'show'
-]);
-Route::get('/products/add', [
-    ProductsController::class, 'add'
-]);
+])->name('product_show');
 
 Route::prefix('admin')
     ->group(function () {
